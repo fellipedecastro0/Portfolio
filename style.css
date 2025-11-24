@@ -6,7 +6,6 @@
     --accent-color: #3b82f6;
 }
 
-
 .navbar-brand {
     font-family: 'Fira Code', monospace;
     font-weight: 700;
@@ -15,55 +14,59 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: "Inter",sans-serif;
-
+    font-family: "Inter", sans-serif;
 }
 
 .text-gradient {
-    background: linear-gradient(to right,#3b83f6e0, #8b5cf6);
+    background: linear-gradient(to right, #3b83f6e0, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 700; 
-
+    font-weight: 700;
 }
 
+/* Garante que a fonte dos ícones carregue */
 [class^="devicon-"] {
     font-family: 'devicon' !important;
 }
 
 .glass-card {
-   background: rgba(255, 255, 255, 0.06);
-   backdrop-filter: blur(10px);
-   -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-   border: 1px solid rgba(255, 255, 255, 0.1);
-   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 
-               inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                inset 0 -1px 1px rgba(0, 0, 0, 0.2);
 
-   border-radius: 16px;
-   padding: 2rem;
-   transition: transform 0.3s ease;
- 
-    
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease; /* Mudei para 'all' para animar cor e movimento */
 }
 
+/* Animação dos Ícones Individuais */
+.glass-card i {
+    transition: transform 0.3s ease;
+}
+.glass-card i:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+/* --- HOVERS ESPECÍFICOS --- */
 .hover-java:hover {
-    border-color: #e76f00 !important; 
-    box-shadow: 0 0 20px rgba(231, 111, 0, 0.4); 
+    border-color: #e76f00 !important;
+    box-shadow: 0 0 20px rgba(231, 111, 0, 0.4);
 }
-
 
 .hover-spring:hover {
     border-color: #6db33f !important;
     box-shadow: 0 0 25px rgba(109, 179, 63, 0.6);
 }
 
-
 .hover-html:hover {
     border-color: #e34f26 !important;
     box-shadow: 0 0 25px rgba(227, 79, 38, 0.6);
 }
-
 
 .hover-css:hover {
     border-color: #1572b6 !important;
@@ -75,16 +78,26 @@ body {
     box-shadow: 0 0 25px rgba(247, 222, 30, 0.493);
 }
 
-
 .hover-sql:hover {
     border-color: #00758f !important;
     box-shadow: 0 0 25px rgba(0, 208, 255, 0.863);
 }
 
-
-
-.class-card-hover:hover{
+/* Hover Genérico (Movimento) */
+.class-card-hover:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
+}
+
+
+.tooltip {
+    --bs-tooltip-bg: #ffffff !important;       /* Pinta Fundo + Seta de Branco */
+    --bs-tooltip-color: #000000 !important;    /* Pinta Texto de Preto */
+    --bs-tooltip-opacity: 1 !important;        /* 100% visível */
+}
+
+.tooltip-inner {
+    font-weight: 700; /* Negrito */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
 }
