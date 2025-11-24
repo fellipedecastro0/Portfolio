@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfólio | Fellipe de Castro</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container"> 
+            <a class="navbar-brand" href="#">&lt;Fellipe/&gt;</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTop">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuTop">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-3" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="d-flex align-items-center justify-content-center vh-100 text-center">
+        <div class="container">
+            
+            <img src="https://github.com/fellipedecastro0.png" 
+                 alt="Foto Fellipe" 
+                 class="avatar-img rounded-circle mb-5" 
+                 style="width: 200px; height: 200px; object-fit: cover;">
+            
+            <h1 class="display-2 fw-bold mb-5">
+                Do <span class="text-gradient">Backend</span> ao <span class="text-gradient">Frontend</span>
+            </h1>
+            
+            <p class="text-secondary text-uppercase mb-5" style="letter-spacing: 3px; font-size: 0.9rem; font-weight: 600;">
+                Tecnologias principais
+            </p>
+
+            <div class="d-flex justify-content-center flex-wrap gap-4">
+
+                <div class="glass-card class-card-hover hover-java p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Java">
+                    <i class="devicon-java-plain colored fs-1"></i>
+                </div>
+
+                <div class="glass-card class-card-hover hover-spring p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Spring Boot">
+                    <i class="devicon-spring-original colored fs-1"></i>
+                </div>
+
+                <div class="glass-card class-card-hover hover-html p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="HTML5">
+                    <i class="devicon-html5-plain colored fs-1"></i>
+                </div>
+
+                <div class="glass-card class-card-hover hover-css p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CSS3">
+                    <i class="devicon-css3-plain colored fs-1"></i>
+                </div>
+
+                <div class="glass-card class-card-hover hover-js p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="JavaScript">
+                    <i class="devicon-javascript-plain colored fs-1"></i>
+                </div>
+
+                <div class="glass-card class-card-hover hover-sql p-3"
+                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="MySQL">
+                    <i class="devicon-mysql-plain colored fs-1"></i>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+</html>
