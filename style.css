@@ -24,7 +24,7 @@ body {
     font-weight: 700;
 }
 
-/* Garante que a fonte dos ícones carregue */
+
 [class^="devicon-"] {
     font-family: 'devicon' !important;
 }
@@ -40,10 +40,10 @@ body {
 
     border-radius: 16px;
     padding: 2rem;
-    transition: all 0.3s ease; /* Mudei para 'all' para animar cor e movimento */
+    transition: all 0.3s ease; 
 }
 
-/* Animação dos Ícones Individuais */
+
 .glass-card i {
     transition: transform 0.3s ease;
 }
@@ -92,9 +92,9 @@ body {
 
 
 .tooltip {
-    --bs-tooltip-bg: #ffffff !important;       /* Pinta Fundo + Seta de Branco */
-    --bs-tooltip-color: #000000 !important;    /* Pinta Texto de Preto */
-    --bs-tooltip-opacity: 1 !important;        /* 100% visível */
+    --bs-tooltip-bg: #ffffff !important;       
+    --bs-tooltip-color: #000000 !important;    
+    --bs-tooltip-opacity: 1 !important;        
 }
 
 .tooltip-inner {
