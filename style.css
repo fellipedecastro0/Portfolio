@@ -1,20 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@300;400;600;800&display=swap');
 
+/* --- VARIAVEIS E TEMAS --- */
 :root {
+    /* TEMA ESCURO (Padrão) */
     --bg-color: #000000;
-    --text-main: #FFFF;
+    --text-main: #FFFFFF;
+    
+    /* Variáveis do Vidro Escuro */
+    --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.01) 100%);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    /* Texto dentro do vidro */
+    --text-glass: white; 
+    --text-shadow-glass: 0 2px 5px rgba(0, 0, 0, 0.9); 
+    
     --accent-color: #3b82f6;
+    --btn-outline-color: #fff;
 }
 
-.navbar-brand {
-    font-family: 'Fira Code', monospace;
-    font-weight: 700;
+/* TEMA CLARO (Ativado pelo JS) */
+body.light-mode {
+    --bg-color: #f0f2f5; 
+    --text-main: #1a1a1a;
+    
+    /* Fundo Branco Sólido nos cards para leitura perfeita */
+    --glass-bg: #ffffff; 
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    
+    /* Texto sem sombra no modo claro */
+    --text-glass: #1a1a1a; 
+    --text-shadow-glass: none; 
+    
+    --btn-outline-color: #3b82f6; 
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: "Inter", sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.navbar-brand {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    color: var(--text-main) !important; 
 }
 
 .text-gradient {
@@ -24,80 +56,214 @@ body {
     font-weight: 700;
 }
 
+.letter-spacing-md {
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
+/* --- TOOLTIPS (DESCRIÇÃO DA TECNOLOGIA - SEMPRE BRANCO) --- */
+/* Este é o bloco que faltava! */
+.tooltip {
+    --bs-tooltip-bg: #ffffff !important;       
+    --bs-tooltip-color: #000000 !important;    
+    --bs-tooltip-opacity: 1 !important;        
+}
+.tooltip-inner {
+    font-weight: 700; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+}
+
+/* --- COMPONENTES ESPECÍFICOS --- */
+.avatar-profile {
+    width: 350px; 
+    height: 350px; 
+    object-fit: cover;
+    border: 2px solid var(--glass-border);
+}
+
+.project-img-start {
+    min-height: 350px;
+    border-radius: 16px 0 0 16px; 
+}
+.project-img-end {
+    min-height: 350px;
+    border-radius: 0 16px 16px 0; 
+}
+
+@media (max-width: 991px) {
+    .project-img-start, .project-img-end {
+        border-radius: 16px 16px 0 0; 
+        min-height: 250px;
+    }
+}
+
+/* --- GLASS CARD --- */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    
+    border-radius: 16px;
+    transition: all 0.3s ease; 
+    
+    color: var(--text-glass); 
+    text-shadow: var(--text-shadow-glass); 
+}
+
+/* Correção Botões Outline no Claro */
+body.light-mode .btn-outline-light {
+    color: var(--btn-outline-color) !important;
+    border-color: var(--btn-outline-color) !important;
+}
+body.light-mode .btn-outline-light:hover {
+    background-color: var(--btn-outline-color) !important;
+    color: #fff !important;
+}
+
+/* Ícones Devicon */
 [class^="devicon-"] {
     font-family: 'devicon' !important;
 }
-
-.glass-card {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1),
-                inset 0 -1px 1px rgba(0, 0, 0, 0.2);
-
-    border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.3s ease; 
-}
-
 
 .glass-card i {
     transition: transform 0.3s ease;
 }
 .glass-card i:hover {
     transform: scale(1.2);
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+/* Brilho no ícone apenas no modo escuro */
+body:not(.light-mode) .glass-card i:hover {
+     filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
 }
 
-/* --- HOVERS ESPECÍFICOS --- */
-.hover-java:hover {
-    border-color: #e76f00 !important;
-    box-shadow: 0 0 20px rgba(231, 111, 0, 0.4);
-}
-
-.hover-spring:hover {
-    border-color: #6db33f !important;
-    box-shadow: 0 0 25px rgba(109, 179, 63, 0.6);
-}
-
-.hover-html:hover {
-    border-color: #e34f26 !important;
-    box-shadow: 0 0 25px rgba(227, 79, 38, 0.6);
-}
-
-.hover-css:hover {
-    border-color: #1572b6 !important;
-    box-shadow: 0 0 25px rgba(21, 115, 182, 0.687);
-}
-
-.hover-js:hover {
-    border-color: #f7df1e !important;
-    box-shadow: 0 0 25px rgba(247, 222, 30, 0.493);
-}
-
-.hover-sql:hover {
-    border-color: #00758f !important;
-    box-shadow: 0 0 25px rgba(0, 208, 255, 0.863);
-}
-
-/* Hover Genérico (Movimento) */
+/* --- HOVERS --- */
 .class-card-hover:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
 }
-
-
-.tooltip {
-    --bs-tooltip-bg: #ffffff !important;       
-    --bs-tooltip-color: #000000 !important;    
-    --bs-tooltip-opacity: 1 !important;        
+/* Hover modo escuro */
+body:not(.light-mode) .class-card-hover:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+/* Hover modo claro */
+body.light-mode .class-card-hover:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.tooltip-inner {
-    font-weight: 700; /* Negrito */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+.hover-java:hover { border-color: #e76f00 !important; box-shadow: 0 0 20px rgba(231, 111, 0, 0.4); }
+.hover-spring:hover { border-color: #6db33f !important; box-shadow: 0 0 25px rgba(109, 179, 63, 0.6); }
+.hover-html:hover { border-color: #e34f26 !important; box-shadow: 0 0 25px rgba(227, 79, 38, 0.6); }
+.hover-css:hover { border-color: #1572b6 !important; box-shadow: 0 0 25px rgba(21, 115, 182, 0.687); }
+.hover-js:hover { border-color: #f7df1e !important; box-shadow: 0 0 25px rgba(247, 222, 30, 0.493); }
+.hover-sql:hover { border-color: #00758f !important; box-shadow: 0 0 25px rgba(0, 208, 255, 0.863); }
+
+/* --- MENU --- */
+.navbar-nav .nav-link {
+    color: var(--text-main) !important; 
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+.navbar-nav .nav-link:hover {
+    opacity: 1;
+    color: var(--accent-color) !important; 
+    transform: translateY(-2px);
+}
+/* Sombra texto menu apenas escuro */
+body:not(.light-mode) .navbar-nav .nav-link:hover {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+.navbar-nav .nav-link.active {
+    opacity: 1;
+    color: var(--text-main) !important;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+.navbar-collapse {
+    border-radius: 16px;
+    padding: 1rem;
+    margin-top: 10px;
+}
+/* Menu mobile escuro */
+body:not(.light-mode) .navbar-collapse {
+     background: rgba(0, 0, 0, 0.9);
+}
+/* Menu mobile claro */
+body.light-mode .navbar-collapse {
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- SCROLL REVEAL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- TYPEWRITER --- */
+.cursor-blink {
+    border-right: 3px solid var(--accent-color);
+    animation: blink 0.75s step-end infinite;
+}
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}
+
+/* --- HOVERS PROJETOS --- */
+.hover-project-burger, .hover-project-password {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+.hover-project-burger:hover {
+    transform: translateY(-10px); 
+    border-color: #ffc107 !important; 
+    box-shadow: 0 15px 40px -10px rgba(255, 193, 7, 0.3); 
+}
+.hover-project-password:hover {
+    transform: translateY(-10px); 
+    border-color: #0d6efd !important; 
+    box-shadow: 0 15px 40px -10px rgba(13, 110, 253, 0.4); 
+}
+
+/* --- HOVERS SOBRE MIM --- */
+.hover-card-bio:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color) !important;
+}
+.hover-card-edu:hover {
+    transform: translateY(-5px);
+    border-color: #0d6efd !important;
+    box-shadow: 0 10px 30px -10px rgba(13, 110, 253, 0.3);
+}
+.hover-card-skills:hover {
+    transform: translateY(-5px);
+    border-color: #198754 !important;
+    box-shadow: 0 10px 30px -10px rgba(25, 135, 84, 0.3);
+}
+
+/* --- BOTÕES --- */
+.btn-social {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn-social:hover {
+    transform: translateY(-5px) scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+}
+
+.main-footer {
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto; 
 }

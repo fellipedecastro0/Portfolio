@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfólio | Fellipe de Castro</title>
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-        
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-        
-        <link rel="stylesheet" href="style.css">
-    </head>
-<body> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Portfólio | Fellipe de Castro">
+    <meta property="og:description" content="Desenvolvedor Fullstack (Java, Spring, React). Confira meus projetos!">
+    <meta property="og:image" content="https://github.com/fellipedecastro0.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/png" href="https://github.com/fellipedecastro0.png">
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <title>Portfólio | Fellipe de Castro</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="80"> 
+    
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container"> 
             <a class="navbar-brand" href="#">&lt;Fellipe/&gt;</a>
             
@@ -28,114 +34,195 @@
             </button>
 
             <div class="collapse navbar-collapse" id="menuTop">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-outline-light ms-3" href="#contato">Contato</a></li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-i18n="nav_home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos" data-i18n="nav_projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="nav_about">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a></li>
+                    
+                    <li class="nav-item mx-2 d-none d-lg-block text-secondary">|</li>
+                
+                    <li class="nav-item d-flex gap-2 ms-lg-2 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-sm btn-outline-light rounded-circle" title="Mudar Tema">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                
+                        <button id="lang-toggle" class="btn btn-sm btn-outline-light font-monospace fw-bold" title="Mudar Idioma">
+                            <span class="fi fi-br"></span> PT
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="d-flex align-items-center justify-content-center vh-100 text-center">
-        <div class="container">
+    <section id="home" class="d-flex align-items-center justify-content-center min-vh-100 text-center py-5">
+        <div class="container mt-5">
             
             <img src="https://github.com/fellipedecastro0.png" 
                  alt="Foto Fellipe" 
-                 class="avatar-img rounded-circle mb-5" 
-                 style="width: 200px; height: 200px; object-fit: cover;">
+                 class="avatar-profile rounded-circle mb-5">
             
             <h1 class="display-2 fw-bold mb-5">
-                Do <span class="text-gradient">Backend</span> ao <span class="text-gradient">Frontend</span>
+                <span id="typewriter-text"></span>
             </h1>
             
-            <p class="text-secondary text-uppercase mb-5" style="letter-spacing: 3px; font-size: 0.9rem; font-weight: 600;">
+            <p class="text-secondary text-uppercase mb-5 letter-spacing-md" data-i18n="hero_subtitle">
                 Tecnologias principais
             </p>
 
             <div class="d-flex justify-content-center flex-wrap gap-4">
-
-                <div class="glass-card class-card-hover hover-java p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Java">
-                    <i class="devicon-java-plain colored fs-1"></i>
-                </div>
-
-                <div class="glass-card class-card-hover hover-spring p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Spring Boot">
-                    <i class="devicon-spring-original colored fs-1"></i>
-                </div>
-
-                <div class="glass-card class-card-hover hover-html p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="HTML5">
-                    <i class="devicon-html5-plain colored fs-1"></i>
-                </div>
-
-                <div class="glass-card class-card-hover hover-css p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CSS3">
-                    <i class="devicon-css3-plain colored fs-1"></i>
-                </div>
-
-                <div class="glass-card class-card-hover hover-js p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="JavaScript">
-                    <i class="devicon-javascript-plain colored fs-1"></i>
-                </div>
-
-                <div class="glass-card class-card-hover hover-sql p-3"
-                     data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="MySQL">
-                    <i class="devicon-mysql-plain colored fs-1"></i>
-                </div>
-
+                <div class="glass-card class-card-hover hover-java p-3" data-bs-toggle="tooltip" data-bs-title="Java"><i class="devicon-java-plain colored fs-1"></i></div>
+                <div class="glass-card class-card-hover hover-spring p-3" data-bs-toggle="tooltip" data-bs-title="Spring Boot"><i class="devicon-spring-original colored fs-1"></i></div>
+                <div class="glass-card class-card-hover hover-html p-3" data-bs-toggle="tooltip" data-bs-title="HTML5"><i class="devicon-html5-plain colored fs-1"></i></div>
+                <div class="glass-card class-card-hover hover-css p-3" data-bs-toggle="tooltip" data-bs-title="CSS3"><i class="devicon-css3-plain colored fs-1"></i></div>
+                <div class="glass-card class-card-hover hover-js p-3" data-bs-toggle="tooltip" data-bs-title="JavaScript"><i class="devicon-javascript-plain colored fs-1"></i></div>
+                <div class="glass-card class-card-hover hover-sql p-3" data-bs-toggle="tooltip" data-bs-title="MySQL"><i class="devicon-mysql-plain colored fs-1"></i></div>
             </div>
-
         </div>
     </section>
 
-    <section>
-
-    </section id="Projetos" class="container py-5">
+    <section id="projetos" class="container py-5 reveal">
         <h2 class="display-5 fw-bold text-center mb-5">
-            Projetos <span class="text-gradient">Destaques</span>
+            <span data-i18n="projects_title">Projetos</span> <span class="text-gradient" data-i18n="projects_highlight">Destaques</span>
         </h2>
 
-        <div class="glass-card p-0 overflow-hidden">
-            <div class="row g-0 align-items-center">
-                
-                <div class="col-lg-6 h-100">
-                    <img src="Devs-Burguer.jpeg" 
-                         alt="Preview do Projeto" 
-                         class="img-fluid w-100 h-100 object-fit-cover"
-                         style="border-radius: 16px 0 0 16px; min-height: 350px;">
+        <div class="glass-card p-0 overflow-hidden mb-5 hover-project-burger">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-lg-6">
+                    <img src="Devs-Burguer.jpeg" alt="Preview do DevsBurger" class="img-fluid w-100 h-100 object-fit-cover project-img-start">
                 </div>
-
-                <div class="col-lg-6 p-4 p-md-5">
+                <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
                     <h3 class="fw-bold mb-3">DevsBurger API</h3>
-
-                    <p class="text-secondary mb-4">
-                        E-commerce Fullstack Descrição: Sistema completo de delivery desenvolvido com Java e Spring Boot. A aplicação gerencia todo o ciclo do pedido: vitrine de produtos dinâmica, carrinho de compras com gerenciamento de sessão (HttpSession) e checkout. Utiliza Hibernate (JPA) para automação total do banco de dados MySQL e Thymeleaf para o frontend.
+                    <p data-i18n="desc_devsburger">
+                        E-commerce Fullstack. Sistema completo de delivery desenvolvido com Java e Spring Boot. 
+                        A aplicação gerencia todo o ciclo do pedido: vitrine de produtos dinâmica, carrinho de compras com 
+                        gerenciamento de sessão e checkout.
                     </p>
-
                     <div class="mb-4">
                         <span class="badge bg-dark border border-secondary text-warning me-2">Java</span>
                         <span class="badge bg-dark border border-secondary text-success me-2">Spring Boot</span>
                         <span class="badge bg-dark border border-secondary text-info me-2">MySQL</span>
                         <span class="badge bg-dark border border-secondary text-light">API REST</span>
                     </div>
-
                     <div class="d-flex gap-3">
-                        <a href="#" class="btn btn-primary fw-bold px-4">
-                            <i class="bi bi-github me-2"></i> Ver Código
+                        <a href="https://github.com/fellipedecastro0/devs-burger-api-final" target="_blank" class="btn btn-primary fw-bold px-4">
+                            <i class="bi bi-github me-2"></i> <span data-i18n="btn_code">Ver Código</span>
                         </a>
+                    </div>
                 </div>
-                
             </div>
-
         </div>
 
+        <div class="glass-card p-0 overflow-hidden mb-5 hover-project-password">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center order-2 order-lg-1">
+                    <h3 class="fw-bold mb-3" data-i18n="title_password">Gerador de Senhas</h3>
+                    <p data-i18n="desc_password">
+                        Aplicação Front-end focada em lógica via JavaScript.
+                        O usuário pode escolher o tamanho da senha, incluir maiúsculas,
+                        números e símbolos. Possui funcionalidade de "Copiar para Área de Transferência".
+                    </p>
+                    <div class="mb-4">
+                        <span class="badge bg-dark border border-secondary text-danger me-2">HTML5</span>
+                        <span class="badge bg-dark border border-secondary text-primary me-2">CSS3</span>
+                        <span class="badge bg-dark border border-secondary text-warning">JavaScript</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/fellipedecastro0/Gerador-de-Senhas" target="_blank" class="btn btn-primary fw-bold px-4">
+                            <i class="bi bi-github me-2"></i> <span data-i18n="btn_code">Ver Código</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="Gerador-senha.png" alt="Preview do Gerador de Senhas" class="img-fluid w-100 h-100 object-fit-cover project-img-end">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
+    <section id="sobre" class="container py-5 mt-5 reveal">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bold">
+                    <span data-i18n="about_title">Sobre</span> <span class="text-gradient" data-i18n="about_me">Mim</span>
+                </h2>
+            </div>
+        </div>
+    
+        <div class="row align-items-start">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="glass-card p-4 hover-card-bio">
+                    <p class="mb-3" data-i18n="bio_p1">Olá! Meu nome é Fellipe. Sou estudante de Engenharia de Software e apaixonado por transformar ideias em código.</p>
+                    <p class="mb-3" data-i18n="bio_p2">Atualmente, meu foco está no desenvolvimento Fullstack, explorando a solidez do Java no backend e a criatividade do Frontend com tecnologias modernas.</p>
+                    <p data-i18n="bio_p3">Sempre busco criar aplicações que não apenas funcionem bem, mas que também tenham uma interface intuitiva e agradável (como estou tentando fazer neste portfólio!).</p>
+                </div>
+            </div>
+    
+            <div class="col-lg-6">
+                <div class="glass-card p-4 mb-4 hover-card-edu">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-mortarboard-fill text-primary me-2"></i> <span data-i18n="edu_title">Formação</span></h4>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5 class="mb-1" data-i18n="edu_course">Engenharia de Software</h5>
+                            <p class="mb-0 small" style="opacity: 0.8;" data-i18n="edu_school">CEUB - Centro Universitário de Brasília</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-10 text-primary border border-primary" data-i18n="edu_semester">2º Semestre</span>
+                    </div>
+                </div>
+    
+                <div class="glass-card p-4 hover-card-skills">
+                    <h4 class="fw-bold mb-3"><i class="bi bi-person-fill-gear text-success me-2"></i> <span data-i18n="skills_title">Soft Skills</span></h4>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><span data-i18n="skill_1">Trabalho em Equipe</span></li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><span data-i18n="skill_2">Resolução de Problemas</span></li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><span data-i18n="skill_3">Proatividade</span></li>
+                        <li><i class="bi bi-check2-circle text-success me-2"></i><span data-i18n="skill_4">Comunicação Clara</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="container py-5 mt-5 mb-5 reveal">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">
+                        <span data-i18n="contact_title">Vamos</span> <span class="text-gradient" data-i18n="contact_verb">Conversar?</span>
+                    </h2>
+                    <p class="text-secondary mt-3" data-i18n="contact_text">
+                        Estou sempre aberto a novas oportunidades e projetos. Sinta-se à vontade para entrar em contato!
+                    </p>
+                </div>
+
+                <div class=" p-5 text-center">
+                    <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+                        <a href="https://www.linkedin.com/in/fellipe-de-castro-oliveira/" target="_blank" class="btn btn-outline-light btn-lg px-4 rounded-pill btn-social">
+                            <i class="bi bi-linkedin me-2"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/fellipedecastro0" target="_blank" class="btn btn-outline-light btn-lg px-4 rounded-pill btn-social">
+                            <i class="bi bi-github me-2"></i> GitHub
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fellipe.castro@sempreceub.com&su=Contato via Portfólio" target="_blank" class="btn btn-primary btn-lg px-4 rounded-pill fw-bold btn-social text-white">
+                            <i class="bi bi-envelope-fill me-2"></i> <span data-i18n="btn_email">Mandar E-mail</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer text-center py-4">
+        <div class="container">
+            <p class="mb-0 text-secondary">
+                &copy; 2025 Portfólio Fellipe de Castro.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
