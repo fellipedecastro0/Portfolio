@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Inter:wght@300;400;600;800&display=swap');
 
-/* --- VARIAVEIS E TEMAS --- */
+
+
 :root {
     /* TEMA ESCURO (Padrão) */
     --bg-color: #000000;
@@ -19,20 +20,15 @@
     --btn-outline-color: #fff;
 }
 
-/* TEMA CLARO (Ativado pelo JS) */
+/* TEMA CLARO */
 body.light-mode {
     --bg-color: #f0f2f5; 
     --text-main: #1a1a1a;
-    
-    /* Fundo Branco Sólido nos cards para leitura perfeita */
     --glass-bg: #ffffff; 
     --glass-border: rgba(0, 0, 0, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-    
-    /* Texto sem sombra no modo claro */
     --text-glass: #1a1a1a; 
     --text-shadow-glass: none; 
-    
     --btn-outline-color: #3b82f6; 
 }
 
@@ -62,8 +58,8 @@ body {
     font-weight: 600;
 }
 
-/* --- TOOLTIPS (DESCRIÇÃO DA TECNOLOGIA - SEMPRE BRANCO) --- */
-/* Este é o bloco que faltava! */
+/* TOOLTIPS  */
+
 .tooltip {
     --bs-tooltip-bg: #ffffff !important;       
     --bs-tooltip-color: #000000 !important;    
@@ -74,7 +70,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
 }
 
-/* --- COMPONENTES ESPECÍFICOS --- */
+/* COMPONENTES ESPECÍFICOS */
 .avatar-profile {
     width: 350px; 
     height: 350px; 
@@ -98,7 +94,7 @@ body {
     }
 }
 
-/* --- GLASS CARD --- */
+/*  GLASS CARD  */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -114,7 +110,7 @@ body {
     text-shadow: var(--text-shadow-glass); 
 }
 
-/* Correção Botões Outline no Claro */
+
 body.light-mode .btn-outline-light {
     color: var(--btn-outline-color) !important;
     border-color: var(--btn-outline-color) !important;
@@ -162,7 +158,7 @@ body.light-mode .class-card-hover:hover {
 .hover-js:hover { border-color: #f7df1e !important; box-shadow: 0 0 25px rgba(247, 222, 30, 0.493); }
 .hover-sql:hover { border-color: #00758f !important; box-shadow: 0 0 25px rgba(0, 208, 255, 0.863); }
 
-/* --- MENU --- */
+/*  MENU  */
 .navbar-nav .nav-link {
     color: var(--text-main) !important; 
     opacity: 0.8;
@@ -201,7 +197,7 @@ body.light-mode .navbar-collapse {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* --- SCROLL REVEAL --- */
+/* SCROLL REVEAL  */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -212,7 +208,7 @@ body.light-mode .navbar-collapse {
     transform: translateY(0);
 }
 
-/* --- TYPEWRITER --- */
+/*  TYPEWRITER  */
 .cursor-blink {
     border-right: 3px solid var(--accent-color);
     animation: blink 0.75s step-end infinite;
@@ -222,7 +218,7 @@ body.light-mode .navbar-collapse {
     50% { border-color: var(--accent-color) }
 }
 
-/* --- HOVERS PROJETOS --- */
+/*  HOVERS PROJETOS  */
 .hover-project-burger, .hover-project-password {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
@@ -238,7 +234,7 @@ body.light-mode .navbar-collapse {
     box-shadow: 0 15px 40px -10px rgba(13, 110, 253, 0.4); 
 }
 
-/* --- HOVERS SOBRE MIM --- */
+/*  HOVERS SOBRE MIM  */
 .hover-card-bio:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color) !important;
@@ -254,7 +250,7 @@ body.light-mode .navbar-collapse {
     box-shadow: 0 10px 30px -10px rgba(25, 135, 84, 0.3);
 }
 
-/* --- BOTÕES --- */
+/*  BOTÕES  */
 .btn-social {
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
